@@ -9,7 +9,7 @@ files.then((readingResult) => {
     if (res.isFile()) {
       let parsedName = path.parse(res.name);
       fs.stat(path.join(__dirname, "secret-folder", res.name), (err, stats) => {
-        console.log(`${parsedName.name} - ${path.extname(parsedName.base)} - ${stats.size} bytes`);
+        console.log(`${parsedName.name} - ${path.extname(parsedName.base).slice(1)} - ${stats.size} bytes`);
       });
     }
   }
